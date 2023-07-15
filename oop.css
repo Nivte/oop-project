@@ -1,0 +1,73 @@
+body {
+  margin: 0;
+}
+
+.table {
+  display: flex;
+  gap: 15vw;
+  /* width: 200vw; */
+  /* height: 50vh; */
+  position: absolute;
+  top: 50vh;
+}
+
+.system {
+}
+
+.kettle {
+  height: 50vh;
+  width: 20vw;
+  /* border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-top: 100px solid #07CAF3; */
+  position: absolute;
+  z-index: -1;
+}
+
+.heatBtn {
+  height: 10vh;
+  width: 5vw;
+  border-radius: 50%;
+  position: relative;
+  left: 10vw;
+  top: -1vh;
+}
+
+.water {
+  height: 0vh;
+  width: 6.2vw;
+  background-color: lightblue;
+  position: relative;
+  left: 4.5vw;
+  top: 2vh;
+  border-bottom-left-radius: 40%;
+  border-bottom-right-radius: 40%;
+  opacity: 0.4;
+}
+
+.createBtn {
+  height: 15vh;
+  width: 10vw;
+  background-color: red;
+  font-size: 2rem;
+  position: absolute;
+  top: 20vh;
+  left: 5vw;
+}
+
+.fillWaterBtn {
+  height: 20vh;
+  width: 10vw;
+  position: absolute;
+  top: 20vh;
+  left: 20vw;
+
+  font-size: 2rem;
+}
+
+.createRingBtn {
+  height: 10vh;
+  width: 10vw;
+  background-color: red;
+  font-size: 3vh;
+}
