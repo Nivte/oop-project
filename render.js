@@ -1,19 +1,21 @@
 let $table = document.getElementById("table");
 console.log($table);
-let $testBtn = document.getElementById("testBtn");
-console.log($testBtn);
+// let $testBtn = document.getElementById("testBtn");
+// console.log($testBtn);
 
-$testBtn.addEventListener("click", waterLevel);
+// $testBtn.addEventListener("click", waterLevel);
 
 function showKettle() {
   hjs = 0;
   tjs = 24;
-  $table.innerHTML += ` <div id="system class="system">
+  $table.innerHTML += ` <div id="system" class="system">
   <img id="kettlePic" class="kettle" src="kettle.jpeg" alt="" />
+
+ 
 
   <img onclick="heatW()" id="heatBtn${index}" class="heatBtn" src="button.jpeg" alt="" />
 
-  <div id="water${index}" class="water" style="height: ${hjs}vh; top: ${tjs}vh;" ></div>
+  <div id="water${index}" class="water" style="height: ${0}vh; top: ${0}vh;" ></div>
 </div>`;
 }
 

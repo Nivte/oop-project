@@ -40,13 +40,15 @@ kettle.prototype.heat = function heat() {
     setInterval(() => {
       if (this.temperature < 90) {
         this.temperature += 10;
-        // console.log(this.temperature);
       } else {
         this.temperature = 100;
       }
     }, 1000);
-
-    this.waterTank = this.waterTank * 0.8;
+    setTimeout(() => {
+      console.log(this.temperature);
+      this.waterTank = this.waterTank * 0.8;
+      console.log(kettleArr);
+    }, 8000);
   }
 };
 
@@ -108,7 +110,7 @@ function fill() {
 function heatW() {
   newKettle.heat();
   console.log(newKettle);
-  console.log(kettleArr)
+  console.log(kettleArr);
 }
 
 // let names = ["a", "b", "c", "d"];
