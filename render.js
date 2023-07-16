@@ -5,7 +5,7 @@ console.log($table);
 
 // $testBtn.addEventListener("click", waterLevel);
 
-function showKettle() {
+function renderAddKettle() {
   hjs = 0;
   tjs = 24;
   $table.innerHTML += ` <div id="system" class="system">
@@ -22,15 +22,32 @@ function showKettle() {
 let hjs = 0;
 // newKettle.waterTank * 0.26;
 let tjs = 24;
-function waterLevel() {
+function renderWaterLevel() {
   //   $water1.style.height = "5vh";
 
   hjs = newKettle.waterTank * 0.26;
-  document.getElementById(`water${index - 1}`).style.height = `${hjs}vh`;
-  document.getElementById(`water${index - 1}`).style.top = `${tjs}vh`;
+  document.getElementById(
+    `water${kettleArr.length - 1}`
+  ).style.height = `${hjs}vh`;
+  document.getElementById(
+    `water${kettleArr.length - 1}`
+  ).style.top = `${tjs}vh`;
   // hhh += 2.6;
   if (tjs > 4) {
     tjs -= 2.6;
-    console.log(kettleArr);
   }
+}
+
+let check = 0;
+function renderHeat() {
+  check = hjs;
+  hjs = newKettle.waterTank * 0.26;
+  tjs += check - hjs + 2.6;
+
+  document.getElementById(
+    `water${kettleArr.length - 1}`
+  ).style.height = `${hjs}vh`;
+  document.getElementById(
+    `water${kettleArr.length - 1}`
+  ).style.top = `${tjs}vh`;
 }

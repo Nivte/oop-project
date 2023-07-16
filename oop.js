@@ -27,31 +27,6 @@ function ringKettle(color) {
   this.bell = false;
 }
 
-//prototype functions
-
-kettle.prototype.fillWater = function fillWater() {
-  if (this.waterTank < 90) {
-    this.waterTank += 10;
-  }
-};
-
-kettle.prototype.heat = function heat() {
-  if (this.waterTank > -20) {
-    setInterval(() => {
-      if (this.temperature < 90) {
-        this.temperature += 10;
-      } else {
-        this.temperature = 100;
-      }
-    }, 1000);
-    setTimeout(() => {
-      console.log(this.temperature);
-      this.waterTank = this.waterTank * 0.8;
-      console.log(kettleArr);
-    }, 8000);
-  }
-};
-
 //prototype matching
 
 ringKettle.prototype = Object.create(kettle.prototype);
@@ -59,6 +34,26 @@ ringKettle.prototype = Object.create(kettle.prototype);
 //constructor matching
 
 ringKettle.prototype.constructor = ringKettle;
+
+//prototype functions
+
+kettle.prototype.fillWater = function fillWater() {
+  // if (this.waterTank < 90) {
+  //   this.waterTank += 10;
+
+  console.log((kettleArr[kettleArr.length - 1].newKettle.waterTank += 10));
+
+  console.log(kettleArr);
+
+  // document.getElementById(`water${index - 1}`).style.height = `${hjs}vh`;
+  // }
+};
+
+kettle.prototype.heat = function heat() {
+  console.log((this.temperature = 100));
+
+  this.waterTank = this.waterTank * 0.8;
+};
 
 //ring function
 
@@ -85,11 +80,11 @@ let newKettle = new kettle("silver");
 
 function addKettle() {
   kettleArr.push({ newKettle, index });
-  showKettle();
-  kettleArr[0].newKettle.waterTank = 0;
+  renderAddKettle();
+  kettleArr[kettleArr.length - 1].newKettle.waterTank = 0;
+  // kettleArr[kettleArr.length - 2].newKettle.waterTank = 20;
   console.log(kettleArr);
   index++;
-  console.log(index);
 }
 
 function getKettles() {
@@ -102,15 +97,16 @@ $fillWaterBtn.addEventListener("click", fill);
 function fill() {
   newKettle.fillWater();
 
-  waterLevel();
+  renderWaterLevel();
 }
 
 // $heatBtn.addEventListener("click", heatW);
 
 function heatW() {
   newKettle.heat();
-  console.log(newKettle);
+
   console.log(kettleArr);
+  renderHeat();
 }
 
 // let names = ["a", "b", "c", "d"];
