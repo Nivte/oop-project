@@ -1,5 +1,5 @@
 let $table = document.getElementById("table");
-console.log($table);
+// console.log($table);
 // let $testBtn = document.getElementById("testBtn");
 // console.log($testBtn);
 
@@ -13,7 +13,7 @@ function renderAddKettle() {
 
  
 
-  <img onclick="heatW()" id="heatBtn${index}" class="heatBtn" src="button.jpeg" alt="" />
+  <img onclick="newKettle.heat()" id="heatBtn${index}" class="heatBtn" src="button.jpeg" alt="" />
 
   <div id="water${index}" class="water" style="height: ${0}vh; top: ${0}vh;" ></div>
 </div>`;
