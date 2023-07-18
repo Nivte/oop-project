@@ -8,7 +8,7 @@ body {
   /* width: 200vw; */
   /* height: 50vh; */
   position: absolute;
-  top: 50vh;
+  top: 65vh;
 }
 
 .kettle {
@@ -32,7 +32,7 @@ body {
 
 .water {
   height: 0vh;
-  width: 6.2vw;
+  width: 6vw;
   background-color: lightblue;
   position: relative;
   left: 4.5vw;
@@ -40,6 +40,7 @@ body {
   border-bottom-left-radius: 40%;
   border-bottom-right-radius: 40%;
   opacity: 0.4;
+  border-radius: 20%;
 }
 
 .createBtn {
@@ -48,19 +49,29 @@ body {
   background-color: red;
   font-size: 2rem;
   position: absolute;
-  top: 20vh;
+  top: 15vh;
   left: 5vw;
+}
+
+.system {
+  margin-left: 3vw;
 }
 
 .fillWaterBtn {
   height: 20vh;
   width: 10vw;
   position: absolute;
-  top: 20vh;
+  top: 15vh;
   left: 20vw;
 
   font-size: 2rem;
 }
+
+.steam {
+  position: absolute;
+  top: -25vh;
+}
+
 
 .createRingBtn {
   height: 10vh;

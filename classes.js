@@ -7,68 +7,68 @@ let $createRingBtn = document.getElementById("createRingBtn");
 
 //variables
 
-let color = "";
-let waterTank = 0;
-let temperature = 25;
+// let color = "";
+// let waterTank = 0;
+// let temperature = 25;
 let kettleArr = [];
 
+function addKettle() {
+  kettleArr.push(new Kettle());
+  renderAddKettle();
+}
 
 // place to start a class
 
-class kettle {
+class Kettle {
   //constructor
 
   constructor(color) {
     this.color = color;
     this.waterTank = 0;
     this.temperature = 25;
+    this.isBoiling = false;
   }
 
   //kettle.prototype functions
 
-
-
-  addKettle() {
-    kettleArr.push({ newKettle, index });
-    renderAddKettle();
-    kettleArr[kettleArr.length - 1].newKettle.waterTank = 0;
-    // kettleArr[kettleArr.length - 2].newKettle.waterTank = 20;
-    console.log(kettleArr);
-    index++;
-  }
-
   fillWater() {
-    // if (this.waterTank < 90) {
-    //   this.waterTank += 10;
+    if (this.waterTank < 85 && this.isBoiling === false) {
+      console.log((this.waterTank += 10));
+      console.log(kettleArr);
+      renderWaterLevel();
 
-    console.log((kettleArr[kettleArr.length - 1].newKettle.waterTank += 10));
-    console.log(kettleArr);
-    renderWaterLevel();
-
-    // document.getElementById(`water${index - 1}`).style.height = `${hjs}vh`;
-    // }
+      // let index = 0;
+      console.log(kettleArr.length);
+    }
   }
 
   heat() {
-    console.log((this.temperature = 100));
+    if (this.waterTank > 25) {
+      if (!this.isBoiling) {
+        this.temperature = 100;
 
-    this.waterTank = this.waterTank * 0.8;
+        this.waterTank = this.waterTank * 0.8;
 
-    console.log(kettleArr);
-    renderHeat();
-  }
+        console.log(kettleArr);
+        renderHeat();
+        this.isBoiling = true;
+      }
+    } else {alert ("you need more water")}
+  } 
 }
 
-let index = 0;
-
-let newKettle = new kettle("silver");
+// let newKettle = new kettle("silver");
 
 function getKettles() {
   console.log(kettleArr);
 }
 getKettles();
 
-$fillWaterBtn.addEventListener("click", newKettle.fillWater);
+$fillWaterBtn.addEventListener("click", () =>
+  kettleArr.length > 0
+    ? kettleArr[kettleArr.length - 1].fillWater()
+    : alert("you have to open the package first")
+);
 
 // function addKettle() {
 //   kettleArr.push({ newKettle, index });
