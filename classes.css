@@ -71,8 +71,6 @@ body {
   border-radius: 20%;
 }
 
-
-
 .heatBtn {
   height: 10vh;
   width: 5vw;
@@ -147,7 +145,6 @@ body {
     text-align: center;
   }
 
-
   .system {
     margin-left: 5vw;
   }
@@ -183,8 +180,6 @@ body {
     left: 10vw;
     top: -1vh;
   }
-
-
 
   .steam {
     position: absolute;
