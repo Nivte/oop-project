@@ -9,6 +9,36 @@
     <script defer src="./render.js"></script>
   </head>
   <body>
+    <h2 class="title">Classes game- Kettle Factory (Data+UI)</h2>
+
+    <img
+      src="package.jpeg"
+      onclick="addKettle()"
+      id="createBtn"
+      class="createBtn"
+      alt=""
+    />
+
+    <img id="fillWaterBtn" class="fillWaterBtn" src="tab.jpeg" alt="" />
+
+    <img
+      onclick="addThermoKettle()"
+      id="createThermBtn"
+      class="createThermoBtn"
+      src="newPackage.jpeg"
+      alt=""
+    />
+
+    <!-- <img
+      class="thermo"
+      style="position: absolute; left: 5vw;"
+    
+      src="thermo.jpeg"
+      alt=""
+    /> -->
+
+    <!-- <div id="redLine" class="redLine"></div> -->
+
     <div id="table" class="table">
       <!-- innerHtml -->
       <!-- <div class="system">
@@ -16,7 +46,7 @@
 
         <div id="water" class="water" style="height: 10vh; top: 10vh"></div>
 
-        <img class="thermo" src="thermo.jpeg" alt="" />
+      
         <img
           onclick="heatW()"
           id="heatBtn"
@@ -35,16 +65,6 @@
         <div id="water${index}" class="water" style="height: ${hjs}vh; top: ${tjs}vh;" ></div>
       </div> -->
     </div>
-
-    <img
-      src="package.jpeg"
-      onclick="addKettle()"
-      id="createBtn"
-      class="createBtn"
-      alt=""
-    />
-
-    <img id="fillWaterBtn" class="fillWaterBtn" src="tab.jpeg" alt="" />
 
     <!-- <img class="steam" src="steam.jpeg" alt=""> -->
 

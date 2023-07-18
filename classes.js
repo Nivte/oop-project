@@ -1,9 +1,6 @@
-//dom
+//html variables
 
-let $createBtn = document.getElementById("createBtn");
 let $fillWaterBtn = document.getElementById("fillWaterBtn");
-let $heatBtn = document.getElementById("heatBtn");
-let $createRingBtn = document.getElementById("createRingBtn");
 
 //variables
 
@@ -43,8 +40,8 @@ class Kettle {
   }
 
   heat() {
-    if (this.waterTank > 25) {
-      if (!this.isBoiling) {
+    if (!this.isBoiling) {
+      if (this.waterTank > 25) {
         this.temperature = 100;
 
         this.waterTank = this.waterTank * 0.8;
@@ -52,9 +49,11 @@ class Kettle {
         console.log(kettleArr);
         renderHeat();
         this.isBoiling = true;
+      } else {
+        alert("fill more water");
       }
-    } else {alert ("you need more water")}
-  } 
+    }
+  }
 }
 
 // let newKettle = new kettle("silver");
@@ -69,30 +68,6 @@ $fillWaterBtn.addEventListener("click", () =>
     ? kettleArr[kettleArr.length - 1].fillWater()
     : alert("you have to open the package first")
 );
-
-// function addKettle() {
-//   kettleArr.push({ newKettle, index });
-//   renderAddKettle();
-//   kettleArr[kettleArr.length - 1].newKettle.waterTank = 0;
-//   // kettleArr[kettleArr.length - 2].newKettle.waterTank = 20;
-//   console.log(kettleArr);
-//   index++;
-// }
-
-// matching functions with buttons
-
-// $createBtn.addEventListener("click", addKettle);
-
-// let names = ["a", "b", "c", "d"];
-
-// console.log(names);
-
-// for (let i=0;i<10;i++) {
-//     names.push(names[i])
-
-// }
-
-// console.log(names)
 
 // $createRingBtn.addEventListener("click", addRingKettle);
 
@@ -133,3 +108,47 @@ $fillWaterBtn.addEventListener("click", () =>
 // let ringKettle1 = new ringKettle("blue");
 // console.log(ringKettle1);
 // console.log(newKettle);
+
+function addThermoKettle() {
+  kettleArr.push(new ThermoKettle());
+  renderThermoKettle();
+  console.log(kettleArr);
+}
+
+// place to start a class
+
+class ThermoKettle extends Kettle {
+  //constructor
+
+  constructor(color) {
+    super();
+    this.thermometer = "down";
+  }
+
+  //kettle.prototype functions
+
+  heat() {
+    if (!this.isBoiling) {
+      if (this.waterTank > 25) {
+        this.temperature = 100;
+
+        this.waterTank = this.waterTank * 0.8;
+
+        console.log(kettleArr);
+        renderHeatT();
+        this.isBoiling = true;
+      } else {
+        alert("not enough water");
+      }
+    }
+
+    this.thermometer = "up";
+  }
+}
+
+// let newKettle = new kettle("silver");
+
+function getKettles() {
+  console.log(kettleArr);
+}
+getKettles();
